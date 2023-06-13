@@ -99,13 +99,15 @@ def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
     html += "\n"
 
     blanks = ''
-    for i in range(len(secretWord)):  # replace blanks with correctly guessed letters
+    # replace blanks with correctly guessed letters
+    for i in range(len(secretWord)):
         if secretWord[i] in correctLetters:
             blanks += secretWord[i]
         else:
             blanks += '_'
 
-    for letter in blanks:  # show the secret word with spaces in between each letter
+    # show the secret word with spaces in between each letter
+    for letter in blanks:
         html += letter + " "
     html += "\n"
 
@@ -113,8 +115,9 @@ def displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord):
 
 
 def getGuess(alreadyGuessed):
-    # Returns the letter the player entered. This function makes sure the player
-    # entered a single letter, and not something else.
+    # Returns the letter the player entered.
+    # This function makes sure the player entered a single letter,
+    # and not something else.
     while True:
         print('Guess a letter.')
         guess = input().lower()
@@ -129,7 +132,8 @@ def getGuess(alreadyGuessed):
 
 
 def playAgain():
-    # This function returns True if the player wants to play again, otherwise it returns False.
+    # This function returns True if the player wants to play again,
+    # otherwise it returns False.
     print('Do you want to play again? (yes or no)')
     return input().lower().startswith('y')
 
